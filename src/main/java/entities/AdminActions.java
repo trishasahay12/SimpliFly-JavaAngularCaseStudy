@@ -1,7 +1,5 @@
 package entities;
 
-//package com.laxman.simpli_fly.entities;
-
 import java.sql.Timestamp;
 
 public class AdminActions {

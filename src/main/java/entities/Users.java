@@ -17,7 +17,7 @@ public class Users {
     public Users() {}
 
     // Parameterized constructor
-    public void Users(int userId, String username, String passwordHash, String email, String contactNumber, String role, Timestamp createdAt, Timestamp updatedAt) {
+    public Users(int userId, String username, String passwordHash, String email, String contactNumber, String role, Timestamp createdAt, Timestamp updatedAt) {
         this.userId = userId;
         this.username = username;
         this.passwordHash = passwordHash;

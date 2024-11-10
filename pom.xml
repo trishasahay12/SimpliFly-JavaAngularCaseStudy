@@ -52,7 +52,7 @@ https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api -->
       <scope>test</scope>
     </dependency>
     <dependency>
-    	<groupId>com.laxman</groupId>
+    	<groupId>com.laxman.simpli_fly</groupId>
     	<artifactId>JUnitTest</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>

@@ -1,23 +1,45 @@
 package entities;
 
 import java.sql.Timestamp;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
 
-//@Entity
+@Entity
+@Table(name = "flights")
 public class Flights {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "flight_id")
     private int flightId;
+
+    @Column(name = "flight_name", nullable = false, length = 100)
     private String flightName;
+
+    @Column(name = "flight_number", nullable = false, length = 20)
     private String flightNumber;
+
+    @Column(name = "owner_id", nullable = false)
     private int ownerId;
+
+    @Column(name = "total_seats", nullable = false)
     private int totalSeats;
-    private Integer baggageLimit; 
+
+    @Column(name = "baggage_limit")
+    private Integer baggageLimit;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Timestamp createdAt;
+
+    @Column(name = "updated_at", nullable = false)
     private Timestamp updatedAt;
 
-    // Default constructor
     public Flights() {}
 
-    // Parameterized constructor
     public Flights(int flightId, String flightName, String flightNumber, int ownerId, int totalSeats, Integer baggageLimit, Timestamp createdAt, Timestamp updatedAt) {
         this.flightId = flightId;
         this.flightName = flightName;
@@ -29,7 +51,6 @@ public class Flights {
         this.updatedAt = updatedAt;
     }
 
-    // Getters and Setters
     public int getFlightId() {
         return flightId;
     }
@@ -96,7 +117,7 @@ public class Flights {
 
     @Override
     public String toString() {
-        return "Flight{" +
+        return "Flights{" +
                 "flightId=" + flightId +
                 ", flightName='" + flightName + '\'' +
                 ", flightNumber='" + flightNumber + '\'' +
@@ -108,4 +129,3 @@ public class Flights {
                 '}';
     }
 }
-

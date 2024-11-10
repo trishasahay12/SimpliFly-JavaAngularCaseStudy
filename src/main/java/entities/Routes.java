@@ -1,29 +1,55 @@
 package entities;
 
-//package com.laxman.simpli_fly.entities;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
 
+@Entity
+@Table(name = "routes")
 public class Routes {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "route_id")
     private int routeId;
+
+    @Column(name = "flight_id", nullable = false)
     private int flightId;
+
+    @Column(name = "origin", nullable = false, length = 50)
     private String origin;
+
+    @Column(name = "destination", nullable = false, length = 50)
     private String destination;
+
+    @Column(name = "departure_time", nullable = false)
     private LocalDateTime departureTime;
+
+    @Column(name = "arrival_time", nullable = false)
     private LocalDateTime arrivalTime;
+
+    @Column(name = "fare", nullable = false)
     private BigDecimal fare;
+
+    @Column(name = "available_seats", nullable = false)
     private int availableSeats;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
-    // Default constructor
     public Routes() {}
 
-    // Parameterized constructor
     public Routes(int routeId, int flightId, String origin, String destination, LocalDateTime departureTime,
-                 LocalDateTime arrivalTime, BigDecimal fare, int availableSeats, LocalDateTime createdAt,
-                 LocalDateTime updatedAt) {
+                  LocalDateTime arrivalTime, BigDecimal fare, int availableSeats, LocalDateTime createdAt,
+                  LocalDateTime updatedAt) {
         this.routeId = routeId;
         this.flightId = flightId;
         this.origin = origin;
@@ -36,7 +62,6 @@ public class Routes {
         this.updatedAt = updatedAt;
     }
 
-    // Getters and setters
     public int getRouteId() {
         return routeId;
     }
@@ -119,7 +144,7 @@ public class Routes {
 
     @Override
     public String toString() {
-        return "Route{" +
+        return "Routes{" +
                 "routeId=" + routeId +
                 ", flightId=" + flightId +
                 ", origin='" + origin + '\'' +
@@ -133,4 +158,3 @@ public class Routes {
                 '}';
     }
 }
-

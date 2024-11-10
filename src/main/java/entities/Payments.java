@@ -1,21 +1,40 @@
 package entities;
-//package com.laxman.simpli_fly.entities;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
 
+@Entity
+@Table(name = "payments")
 public class Payments {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "payment_id")
     private int paymentId;
+
+    @Column(name = "booking_id", nullable = false)
     private int bookingId;
+
+    @Column(name = "amount", nullable = false)
     private BigDecimal amount;
+
+    @Column(name = "payment_date", nullable = false)
     private Timestamp paymentDate;
+
+    @Column(name = "payment_method", nullable = false, length = 50)
     private String paymentMethod;
+
+    @Column(name = "status", nullable = false, length = 50)
     private String status;
 
-    // Default constructor
     public Payments() {}
 
-    // Parameterized constructor
     public Payments(int paymentId, int bookingId, BigDecimal amount, Timestamp paymentDate, String paymentMethod, String status) {
         this.paymentId = paymentId;
         this.bookingId = bookingId;
@@ -25,7 +44,6 @@ public class Payments {
         this.status = status;
     }
 
-    // Getters and setters
     public int getPaymentId() {
         return paymentId;
     }
@@ -76,7 +94,7 @@ public class Payments {
 
     @Override
     public String toString() {
-        return "Payment{" +
+        return "Payments{" +
                 "paymentId=" + paymentId +
                 ", bookingId=" + bookingId +
                 ", amount=" + amount +
@@ -86,4 +104,3 @@ public class Payments {
                 '}';
     }
 }
-

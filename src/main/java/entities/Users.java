@@ -9,39 +9,37 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 
 @Entity
-@Table(name = "users")  /// Specifies the table name in the database
+@Table(name = "users")
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-incremented primary key
-    @Column(name = "user_id")  // Maps to the user_id column in the table
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private int userId;
 
-    @Column(name = "username", nullable = false, length = 50)  // Maps to the username column
+    @Column(name = "username", nullable = false, length = 50)
     private String username;
 
-    @Column(name = "password_hash", nullable = false)  // Maps to the password_hash column
+    @Column(name = "password_hash", nullable = false)
     private String passwordHash;
 
-    @Column(name = "email", nullable = false, unique = true)  // Maps to the email column
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "contact_number", length = 15)  // Maps to the contact_number column
+    @Column(name = "contact_number", length = 15)
     private String contactNumber;
 
-    @Column(name = "role", nullable = false)  // Maps to the role column
+    @Column(name = "role", nullable = false)
     private String role;
 
-    @Column(name = "created_at", nullable = false, updatable = false)  // Maps to the created_at column
+    @Column(name = "created_at", nullable = false, updatable = false)
     private Timestamp createdAt;
 
-    @Column(name = "updated_at")  // Maps to the updated_at column
+    @Column(name = "updated_at")
     private Timestamp updatedAt;
 
-    // Default constructor
     public Users() {}
 
-    // Parameterized constructor
     public Users(int userId, String username, String passwordHash, String email, String contactNumber, String role, Timestamp createdAt, Timestamp updatedAt) {
         this.userId = userId;
         this.username = username;

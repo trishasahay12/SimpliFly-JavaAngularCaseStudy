@@ -1,16 +1,32 @@
 package entities;
-//package com.laxman.simpli_fly.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
+
+@Entity
+@Table(name = "seats")
 public class Seats {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "seat_id")
     private int seatId;
+
+    @Column(name = "booking_id", nullable = false)
     private int bookingId;
+
+    @Column(name = "seat_number", nullable = false, length = 10)
     private String seatNumber;
+
+    @Column(name = "is_available", nullable = false)
     private boolean isAvailable;
 
-    // Default constructor
     public Seats() {}
 
-    // Parameterized constructor
     public Seats(int seatId, int bookingId, String seatNumber, boolean isAvailable) {
         this.seatId = seatId;
         this.bookingId = bookingId;
@@ -18,7 +34,6 @@ public class Seats {
         this.isAvailable = isAvailable;
     }
 
-    // Getters and setters
     public int getSeatId() {
         return seatId;
     }
@@ -47,13 +62,13 @@ public class Seats {
         return isAvailable;
     }
 
-    public void setAvailable(boolean available) {
-        isAvailable = available;
+    public void setAvailable(boolean isAvailable) {
+        this.isAvailable = isAvailable;
     }
 
     @Override
     public String toString() {
-        return "Seat{" +
+        return "Seats{" +
                 "seatId=" + seatId +
                 ", bookingId=" + bookingId +
                 ", seatNumber='" + seatNumber + '\'' +
@@ -61,4 +76,3 @@ public class Seats {
                 '}';
     }
 }
-

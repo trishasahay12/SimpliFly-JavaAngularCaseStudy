@@ -1,27 +1,48 @@
 package entities;
 
-//package com.laxman.simpli_fly.entities;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
 
+@Entity
+@Table(name = "bookings")
 public class Bookings {
+
+    @Id
+    @Column(name = "booking_id")
     private int bookingId;
+
+    @Column(name = "user_id", nullable = false)
     private int userId;
+
+    @Column(name = "route_id", nullable = false)
     private int routeId;
+
+    @Column(name = "booking_date", nullable = false)
     private LocalDateTime bookingDate;
+
+    @Column(name = "status", nullable = false, length = 50)
     private String status;
+
+    @Column(name = "total_price", nullable = false)
     private BigDecimal totalPrice;
+
+    @Column(name = "payment_status", nullable = false, length = 50)
     private String paymentStatus;
+
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
-    // Default constructor
     public Bookings() {}
 
-    // Parameterized constructor
-    public Bookings(int bookingId, int userId, int routeId, LocalDateTime bookingDate, String status, 
-                   BigDecimal totalPrice, String paymentStatus, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Bookings(int bookingId, int userId, int routeId, LocalDateTime bookingDate, String status,
+                    BigDecimal totalPrice, String paymentStatus, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.bookingId = bookingId;
         this.userId = userId;
         this.routeId = routeId;
@@ -33,7 +54,6 @@ public class Bookings {
         this.updatedAt = updatedAt;
     }
 
-    // Getters and setters
     public int getBookingId() {
         return bookingId;
     }
@@ -121,4 +141,3 @@ public class Bookings {
                 '}';
     }
 }
-

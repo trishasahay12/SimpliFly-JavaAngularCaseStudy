@@ -23,7 +23,7 @@
 <mapping  class="entities.Bookings"  /> 
 <mapping  class="entities.Seats"  />  
 <mapping  class="entities.Payments"  /> 
-<mapping  class="entities.AdminActions"  />
+<mapping  class="entities.Admin"  />
 
  
 	</session-factory>

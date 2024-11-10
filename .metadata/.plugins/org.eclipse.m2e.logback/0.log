@@ -28,3 +28,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.laxman:JU
 2024-11-10 16:28:23,462 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Laxma\git\SimpliFly-JavaAngularCaseStudy\src\main\resources
 2024-11-10 16:28:23,475 [Worker-23: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\test\resources to target\test-classes
 2024-11-10 17:02:51,696 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2024-11-10 18:25:36,472 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

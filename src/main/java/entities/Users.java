@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.Column;
 
 @Entity
-@Table(name = "users")  // Specifies the table name in the database
+@Table(name = "users")  /// Specifies the table name in the database
 public class Users {
 
     @Id

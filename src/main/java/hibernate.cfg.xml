@@ -17,10 +17,16 @@
 <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 <property name="show_sql">true</property>
 <!-- Mapping model/entity class having annotations   -->
-<mapping  class="entities.Users"  />  
+<mapping  class="entities.Users"  /> 
+<mapping  class="entities.Flights"  />  
+<mapping  class="entities.Routes"  /> 
+<mapping  class="entities.Bookings"  /> 
+<mapping  class="entities.Seats"  />  
+<mapping  class="entities.Payments"  /> 
+<mapping  class="entities.AdminActions"  />
 
  
 	</session-factory>
  
  
-</hibernate-configuration>								
+</hibernate-configuration>		
